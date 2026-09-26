@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Viaje - DOM y Eventos</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./main.js" defer></script>
+</head>
+<body>
+    <div class="app-container">
+        <h1>✈️ Mi Simulador de Viaje</h1>
+
+        <div id="feedback" class="oculto" aria-live="polite"></div>
+
+        <div class="seccion-caja">
+            <label for="buscar">🔍 Buscar categoría:</label>
+            <input type="text" id="buscar" placeholder="Ej. Vuelos, Comida...">
+        </div>
+
+        <div class="seccion-caja form-box">
+            <h2>Agregar Nuevo Gasto</h2>
+            <input type="text" id="nombre-categoria" placeholder="Nombre (Ej. Souvenirs)">
+            <input type="number" id="presupuesto-categoria" placeholder="Presupuesto ($)" min="1">
+            <button id="btn-agregar" type="button">➕ Agregar</button>
+        </div>
+
+        <div class="list-box">
+            <div class="titulo-lista">
+                <h2>Tus Gastos Planeados</h2>
+                <button id="btn-vaciar" class="btn-vaciar" type="button">Vaciar gastos</button>
+            </div>
+            <p id="resumen" class="resumen"></p>
+            <div id="contenedor-categorias"></div>
+        </div>
+    </div>
+</body>
+</html>
