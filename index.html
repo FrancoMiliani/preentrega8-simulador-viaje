@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simulador de Viaje - DOM y Eventos</title>
     <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./main.js" defer></script>
 </head>
 <body>
@@ -33,6 +34,12 @@
             <p id="resumen" class="resumen"></p>
             <div id="contenedor-categorias"></div>
         </div>
+
+        <section class="list-box destinos-box">
+            <h2>Destinos recomendados</h2>
+            <p id="estado-destinos" class="resumen" aria-live="polite">Cargando destinos…</p>
+            <div id="contenedor-destinos"></div>
+        </section>
     </div>
 </body>
 </html>

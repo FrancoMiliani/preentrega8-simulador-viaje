@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "nombre": "Bariloche",
+        "pais": "Argentina",
+        "dias": 5,
+        "precioEstimado": 480000
+    },
+    {
+        "id": 2,
+        "nombre": "Mendoza",
+        "pais": "Argentina",
+        "dias": 4,
+        "precioEstimado": 350000
+    },
+    {
+        "id": 3,
+        "nombre": "Río de Janeiro",
+        "pais": "Brasil",
+        "dias": 6,
+        "precioEstimado": 720000
+    }
+]

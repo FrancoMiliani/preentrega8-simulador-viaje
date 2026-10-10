@@ -87,6 +87,8 @@ button:hover { background-color: #218838; }
 .btn-vaciar { width: auto; margin: 0 0 15px; white-space: nowrap; }
 .resumen { color: #666; text-align: center; margin: 0 0 10px; }
 .estado-vacio { color: #666; text-align: center; padding: 18px; }
+.destinos-box { margin-top: 20px; }
+.destino-card { border-left-color: #28a745; }
 
 #feedback {
     padding: 10px;
