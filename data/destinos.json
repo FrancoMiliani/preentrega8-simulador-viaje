@@ -1,0 +1,12 @@
+[
+  {"id":1,"nombre":"Bariloche","pais":"Argentina","precioNoche":70000,"precioBase":180000,"imagen":"assets/bariloche.jpg"},
+  {"id":2,"nombre":"Mendoza","pais":"Argentina","precioNoche":55000,"precioBase":125000,"imagen":"assets/mendoza.jpg"},
+  {"id":3,"nombre":"Río de Janeiro","pais":"Brasil","precioNoche":98000,"precioBase":280000,"imagen":"assets/rio-de-janeiro.jpg"},
+  {"id":4,"nombre":"Mar del Plata","pais":"Buenos Aires, Argentina","precioNoche":62000,"precioBase":150000,"imagen":"assets/mar-del-plata.webp"},
+  {"id":5,"nombre":"San Martín de los Andes","pais":"Neuquén, Argentina","precioNoche":82000,"precioBase":205000,"imagen":"assets/san-martin-de-los-andes.jpg"},
+  {"id":6,"nombre":"Villa La Angostura","pais":"Neuquén, Argentina","precioNoche":86000,"precioBase":215000,"imagen":"assets/villa-la-angostura.jpg"},
+  {"id":7,"nombre":"Puerto Iguazú","pais":"Misiones, Argentina","precioNoche":78000,"precioBase":195000,"imagen":"assets/puerto-iguazu.jpeg"},
+  {"id":8,"nombre":"Ushuaia","pais":"Tierra del Fuego, Argentina","precioNoche":99000,"precioBase":275000,"imagen":"assets/ushuaia.jpg"},
+  {"id":9,"nombre":"El Calafate","pais":"Santa Cruz, Argentina","precioNoche":94000,"precioBase":255000,"imagen":"assets/el-calafate.jpeg"},
+  {"id":10,"nombre":"Salta","pais":"Salta, Argentina","precioNoche":68000,"precioBase":165000,"imagen":"assets/salta.jpg"}
+]

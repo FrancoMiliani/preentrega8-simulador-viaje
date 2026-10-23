@@ -3,43 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulador de Viaje - DOM y Eventos</title>
-    <link rel="stylesheet" href="./style.css">
+    <meta name="description" content="ToroTour, cotizador de viajes personalizado.">
+    <title>ToroTour | Cotizá tu próximo viaje</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="./main.js" defer></script>
+    <script src="./js/storage.js" defer></script>
+    <script src="./js/ui.js" defer></script>
+    <script src="./js/app.js" defer></script>
 </head>
 <body>
-    <div class="app-container">
-        <h1>✈️ Mi Simulador de Viaje</h1>
+    <header class="hero">
+        <nav class="navegacion" aria-label="Navegación principal">
+            <a class="marca" href="#inicio" aria-label="ToroTour, inicio"><span>✦</span> ToroTour</a>
+            <a class="nav-link" href="#destinos">Destinos</a>
+            <a class="nav-link" href="#cotizador">Cotizá tu viaje</a>
+        </nav>
+        <div id="inicio" class="hero-contenido">
+            <p class="eyebrow">VIAJES HECHOS A TU MEDIDA</p>
+            <h1>El mundo se siente<br>más cerca.</h1>
+            <p>Elegí un destino, personalizá tu experiencia y obtené una cotización en minutos.</p>
+            <a class="boton boton-claro" href="#destinos">Descubrir destinos <span>→</span></a>
+        </div>
+        <div class="hero-datos" aria-label="Beneficios de ToroTour">
+            <p><strong>10</strong> destinos seleccionados</p><p><strong>100%</strong> a tu medida</p><p><strong>24/7</strong> acompañamiento</p>
+        </div>
+    </header>
+
+    <main class="app-container">
 
         <div id="feedback" class="oculto" aria-live="polite"></div>
 
-        <div class="seccion-caja">
-            <label for="buscar">🔍 Buscar categoría:</label>
-            <input type="text" id="buscar" placeholder="Ej. Vuelos, Comida...">
-        </div>
-
-        <div class="seccion-caja form-box">
-            <h2>Agregar Nuevo Gasto</h2>
-            <input type="text" id="nombre-categoria" placeholder="Nombre (Ej. Souvenirs)">
-            <input type="number" id="presupuesto-categoria" placeholder="Presupuesto ($)" min="1">
-            <button id="btn-agregar" type="button">➕ Agregar</button>
-        </div>
-
-        <div class="list-box">
-            <div class="titulo-lista">
-                <h2>Tus Gastos Planeados</h2>
-                <button id="btn-vaciar" class="btn-vaciar" type="button">Vaciar gastos</button>
-            </div>
-            <p id="resumen" class="resumen"></p>
-            <div id="contenedor-categorias"></div>
-        </div>
-
-        <section class="list-box destinos-box">
-            <h2>Destinos recomendados</h2>
-            <p id="estado-destinos" class="resumen" aria-live="polite">Cargando destinos…</p>
-            <div id="contenedor-destinos"></div>
+        <section id="destinos" class="seccion destinos-box">
+            <div class="encabezado-seccion"><div><p class="eyebrow oscuro">INSPIRATE</p><h2>Destinos que invitan a irse</h2></div><label class="buscador"><span>⌕</span><input type="search" id="buscar-destino" placeholder="Buscar destino o país"></label></div>
+            <p class="ayuda-destinos"><span>01</span> Elegí el destino que más te inspire. Después vas a poder ajustar pasajeros, noches y extras.</p>
+            <p id="estado-destinos" class="estado" aria-live="polite">Cargando destinos…</p>
+            <div id="contenedor-destinos" class="grilla-destinos"></div>
         </section>
-    </div>
+
+        <section id="cotizador" class="seccion flujo-cotizacion">
+            <div class="paso-intro"><p class="eyebrow oscuro">TU PLAN, A TU RITMO</p><h2>Armá una escapada inolvidable.</h2><p>Elegí la duración y los servicios que querés sumar. El precio se actualiza cuando generás tu cotización.</p><div class="pasos"><span>01 Destino</span><span>02 Detalles</span><span>03 Cotización</span></div></div>
+            <div class="panel-cotizador">
+                <div class="etiqueta-paso">PASO 02</div><h3>Personalizá tu viaje</h3><p id="destino-seleccionado" class="destino-seleccionado">Primero elegí un destino.</p>
+                <div class="campos-numeros"><label>Pasajeros<input type="number" id="pasajeros" value="1" min="1" max="10" aria-label="Pasajeros"></label><label>Noches<input type="number" id="noches" value="3" min="1" max="30" aria-label="Noches"></label></div>
+                <p class="titulo-extras">Sumá a tu experiencia</p>
+                <label class="campo-servicio"><span><strong>Traslado al aeropuerto</strong><small>Elegí si querés traslado de ida o ida y vuelta.</small></span><select id="traslado" aria-label="Tipo de traslado"><option value="0">Sin traslado</option><option value="35000">Solo ida · $35.000</option><option value="60000">Ida y vuelta · $60.000</option></select></label>
+                <label class="check"><input type="checkbox" id="asistencia"><span><strong>Asistencia al viajero</strong><small>Cobertura para cada pasajero durante cada noche.</small></span><b>$6.700 / noche</b></label>
+                <div id="vista-previa" class="vista-previa" aria-live="polite">Elegí un destino para ver tu estimación.</div>
+                <button id="btn-cotizar" class="boton boton-principal" type="button" disabled>Generar cotización <span>→</span></button>
+            </div>
+        </section>
+
+        <section class="seccion mi-cotizacion">
+            <div class="encabezado-cotizacion"><div><p class="eyebrow oscuro">PASO 03</p><h2>Tu viaje está tomando forma.</h2></div><button id="btn-vaciar" class="btn-texto" type="button">Limpiar cotización</button></div>
+            <p id="resumen" class="estado">Todavía no hay una cotización.</p>
+            <div id="contenedor-cotizacion"></div>
+            <button id="btn-confirmar" class="boton boton-principal oculto" type="button">Confirmar mi reserva <span>→</span></button>
+        </section>
+    </main>
+    <footer>ToroTour <span>·</span> Tu próxima historia empieza hoy.</footer>
 </body>
 </html>
